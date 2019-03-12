@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shape Up or Shape Out</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 border border-primary text-center">
+                <h2>Square</h2>
+            </div>
+            <div class="col-3 border border-primary text-center">
+                <h2>Rectangle</h2>
+            </div>
+            <div class="col-3 border border-primary text-center">
+                <h2>Circle</h2>
+            </div>
+            <div class="col-3 border border-primary text-center">
+                <h2>Triangle</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="d-flex flex-column col-3 align-items-center">
+                <input class="form-control" type="text" placeholder="Square Side Length">
+                <button type="submit" class="d-flex btn btn-primary justify-content-center">Insert Square</button>
+            </div>
+            <div class="d-flex flex-column col-3 align-items-center">
+                    <input class="form-control" type="text" placeholder="Rectangle Height">
+                    <input class="form-control" type="text" placeholder="Rectangle Width">
+                    <button type="submit" class="d-flex btn btn-primary justify-content-center">Insert Rectangle</button>
+            </div>
+            <div class="d-flex flex-column col-3 align-items-center">
+                <input class="form-control" type="text" placeholder="Circle Radius">
+                <button type="submit" class="d-flex btn btn-primary justify-content-center">Insert Circle</button>
+            </div>
+            <div class="d-flex flex-column col-3 align-items-center">
+                <input class="form-control" type="text" placeholder="Isoceles Right Triangle Height">
+                <button type="submit" class="d-flex btn btn-primary justify-content-center">Insert Triangle</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- My Script Tag -->
+    <script src="shapes.js"></script>
+</body>
+
+</html>
