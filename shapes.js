@@ -3,19 +3,6 @@ class Shape {
         this.height = height;
         this.width = width;
     }
-};
-
-class Square extends Shape {
-    constructor(height, width){
-        super(height, width);
-        this.name = 'Square';
-        this.radius = height / 2;
-        this.area = Math.pow(height, 2);
-        this.perimeter = height * 4;
-        this.shapediv = $(`<div class="square" style="width: ${this.width}px; height: ${this.height}px; left: ${randomNumber(this.width, 600)}px; top:${randomNumber(this.width, 600)}px"></div>`);
-        this.shapediv.click( () => this.describe() );
-        $('#displayarea').append(this.shapediv);
-    }
 
     describe() {
         $('#sn').empty();
@@ -30,6 +17,20 @@ class Square extends Shape {
         $('#a').append(`Area: ${this.area} pixels`);
         $('#p').empty();
         $('#p').append(`Perimeter: ${this.perimeter} pixels`);
+    }
+    
+};
+
+class Square extends Shape {
+    constructor(height, width){
+        super(height, width);
+        this.name = 'Square';
+        this.radius = height / 2;
+        this.area = Math.pow(height, 2);
+        this.perimeter = height * 4;
+        this.shapediv = $(`<div class="square" style="width: ${this.width}px; height: ${this.height}px; left: ${randomNumber(this.width, 600)}px; top:${randomNumber(this.width, 600)}px"></div>`);
+        this.shapediv.click( () => this.describe() );
+        $('#displayarea').append(this.shapediv);
     }
 }
 
@@ -44,21 +45,6 @@ class Rectangle extends Shape {
         this.shapediv.click( () => this.describe() );
         $('#displayarea').append(this.shapediv);
     }
-
-    describe() {
-        $('#sn').empty();
-        $('#sn').append(`Shape Name: ${this.name}`);
-        $('#w').empty();
-        $('#w').append(`Width: ${this.width} pixels`);
-        $('#h').empty();
-        $('#h').append(`Height: ${this.height} pixels`);
-        $('#r').empty();
-        $('#r').append(`Radius: ${this.radius} pixels`);
-        $('#a').empty();
-        $('#a').append(`Area: ${this.area} pixels`);
-        $('#p').empty();
-        $('#p').append(`Perimeter: ${this.perimeter} pixels`);
-    }
 }
 
 class Circle extends Shape {
@@ -72,28 +58,17 @@ class Circle extends Shape {
         this.shapediv.click( () => this.describe());
         $('#displayarea').append(this.shapediv);
     }
-
-    describe() {
-        console.log(this.height);
-        $('#sn').empty();
-        $('#sn').append(`Shape Name: ${this.name}`);
-        $('#w').empty();
-        $('#w').append(`Width: ${this.width} pixels`);
-        $('#h').empty();
-        $('#h').append(`Height: ${this.height} pixels`);
-        $('#r').empty();
-        $('#r').append(`Radius: ${this.radius} pixels`);
-        $('#a').empty();
-        $('#a').append(`Area: ${this.area} pixels`);
-        $('#p').empty();
-        $('#p').append(`Perimeter: ${this.perimeter} pixels`);
-    }
 }
 
 class Triangle extends Shape {
     constructor(height){
-        super(height);
+        super(height, height);
+        this.name = 'Triangle';
+        this.radius = this.width / 2;
+        this.area = .5 * this.height * this.width;
+        this.perimeter = 2 * height + (Math.sqrt(2)) * height;
         this.shapediv = $(`<div class="triangle" style="width: 0px; height: 0px; left: ${randomNumber(this.height, 600)}px; top:${randomNumber(this.height, 600)}px; border-bottom: ${this.height}px solid green; border-right: ${this.height}px solid transparent"></div>`);
+        this.shapediv.click( () => this.describe());
         $('#displayarea').append(this.shapediv);
     }
 }
