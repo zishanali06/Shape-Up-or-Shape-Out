@@ -12,3 +12,8 @@
     position: absolute;
     background-color: purple;
 }
+.circle{
+    border-radius: 50%;
+    position: absolute;
+    background-color: coral;
+}

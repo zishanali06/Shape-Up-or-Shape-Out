@@ -22,15 +22,25 @@ class Rectangle extends Shape {
 }
 
 class Circle extends Shape {
-    constructor(height, width){
-        super(height, width);
-        let newcircle = $(`<div class="rectangle" style="width: ${this.width}px; height: ${this.height}px; left: ${randomNumber(this.width, 600)}px; top:${randomNumber(this.height, 600)}px"></div>`);
+    constructor(radius){
+        super(radius * 2, radius * 2)
+        this.radius = radius;
+        let newcircle = $(`<div class="circle" style="width: ${this.width}px; height: ${this.height}px; left: ${randomNumber(this.width, 600)}px; top:${randomNumber(this.height, 600)}px"></div>`);
         $('#displayarea').append(newcircle);
+    }
+}
+
+class Triangle extends Shape {
+    constructor(height){
+        super(height);
+        let newtriangle = $(`<div class="circle" style="width: 0px; height: 0px; left: ${randomNumber(this.height, 600)}px; top:${randomNumber(this.height, 600)}px; border-bottom: ${this.height}px solid green; border-right: ${this.height}px solid transparent"></div>`);
+        $('#displayarea').append(newtriangle);
     }
 }
 
 $('#squarebutton').click( () => addSquare() );
 $('#rectanglebutton').click( () => addRectangle() );
+$('#circlebutton').click( () => addCircle());
 
 const addSquare = () => {
     let size = $('#squareinput').val();
@@ -44,7 +54,8 @@ const addRectangle = () => {
 }
 
 const addCircle = () => {
-    let height = 
+    let circleradius = $('#circleinput').val();
+    let news = new Circle(circleradius);
 };
 
 
