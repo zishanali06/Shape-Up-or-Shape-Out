@@ -17,3 +17,8 @@
     position: absolute;
     background-color: coral;
 }
+.triangle{
+    position: absolute;
+    border-bottom: solid green;
+    border-right: solid transparent;
+}

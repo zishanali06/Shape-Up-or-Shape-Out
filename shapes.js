@@ -8,8 +8,8 @@ class Shape {
 class Square extends Shape {
     constructor(height, width){
         super(height, width);
-        let newsquare = $(`<div class="square" style="width: ${this.width}px; height: ${this.height}px; left: ${randomNumber(this.width, 600)}px; top:${randomNumber(this.width, 600)}px"></div>`);
-        $('#displayarea').append(newsquare);
+        this.shapediv = $(`<div class="square" style="width: ${this.width}px; height: ${this.height}px; left: ${randomNumber(this.width, 600)}px; top:${randomNumber(this.width, 600)}px"></div>`);
+        $('#displayarea').append(this.shapediv);
     }
 }
 
@@ -33,14 +33,16 @@ class Circle extends Shape {
 class Triangle extends Shape {
     constructor(height){
         super(height);
-        let newtriangle = $(`<div class="circle" style="width: 0px; height: 0px; left: ${randomNumber(this.height, 600)}px; top:${randomNumber(this.height, 600)}px; border-bottom: ${this.height}px solid green; border-right: ${this.height}px solid transparent"></div>`);
+        let newtriangle = $(`<div class="triangle" style="width: 0px; height: 0px; left: ${randomNumber(this.height, 600)}px; top:${randomNumber(this.height, 600)}px; border-bottom: ${this.height}px solid green; border-right: ${this.height}px solid transparent"></div>`);
         $('#displayarea').append(newtriangle);
     }
 }
 
 $('#squarebutton').click( () => addSquare() );
 $('#rectanglebutton').click( () => addRectangle() );
-$('#circlebutton').click( () => addCircle());
+$('#circlebutton').click( () => addCircle() );
+$('#trianglebutton').click( () => addTriangle() );
+
 
 const addSquare = () => {
     let size = $('#squareinput').val();
@@ -57,6 +59,11 @@ const addCircle = () => {
     let circleradius = $('#circleinput').val();
     let news = new Circle(circleradius);
 };
+
+const addTriangle = () => {
+    let trih = $('#triangleinput').val();
+    let news = new Triangle(trih);
+}
 
 
 const randomNumber = (min, max) => {
