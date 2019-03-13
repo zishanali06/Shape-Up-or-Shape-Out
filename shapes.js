@@ -18,6 +18,21 @@ class Shape {
         $('#p').empty();
         $('#p').append(`Perimeter: ${this.perimeter} pixels`);
     }
+
+    clearInfoBox() {
+        $('#sn').empty();
+        $('#sn').append(`Shape Name:`);
+        $('#w').empty();
+        $('#w').append(`Width:`);
+        $('#h').empty();
+        $('#h').append(`Height:`);
+        $('#r').empty();
+        $('#r').append(`Radius:`);
+        $('#a').empty();
+        $('#a').append(`Area:`);
+        $('#p').empty();
+        $('#p').append(`Perimeter:`);
+    }
     
 };
 
@@ -30,6 +45,7 @@ class Square extends Shape {
         this.perimeter = height * 4;
         this.shapediv = $(`<div class="square" style="width: ${this.width}px; height: ${this.height}px; left: ${randomNumber(this.width, 600)}px; top:${randomNumber(this.width, 600)}px"></div>`);
         this.shapediv.click( () => this.describe() );
+        this.shapediv.dblclick( () => {this.shapediv.remove(); this.clearInfoBox()});
         $('#displayarea').append(this.shapediv);
     }
 }
@@ -43,6 +59,7 @@ class Rectangle extends Shape {
         this.perimeter = this.height * 2 + this.width * 2;
         this.shapediv = $(`<div class="rectangle" style="width: ${this.width}px; height: ${this.height}px; left: ${randomNumber(this.width, 600)}px; top:${randomNumber(this.height, 600)}px"></div>`);
         this.shapediv.click( () => this.describe() );
+        this.shapediv.dblclick( () => {this.shapediv.remove(); this.clearInfoBox()});
         $('#displayarea').append(this.shapediv);
     }
 }
@@ -56,6 +73,7 @@ class Circle extends Shape {
         this.perimeter = 2 * Math.PI * this.radius;
         this.shapediv = $(`<div class="circle" style="width: ${this.width}px; height: ${this.height}px; left: ${randomNumber(this.width, 600)}px; top:${randomNumber(this.height, 600)}px"></div>`);
         this.shapediv.click( () => this.describe());
+        this.shapediv.dblclick( () => {this.shapediv.remove(); this.clearInfoBox()});
         $('#displayarea').append(this.shapediv);
     }
 }
@@ -69,6 +87,7 @@ class Triangle extends Shape {
         this.perimeter = 2 * height + (Math.sqrt(2)) * height;
         this.shapediv = $(`<div class="triangle" style="width: 0px; height: 0px; left: ${randomNumber(this.height, 600)}px; top:${randomNumber(this.height, 600)}px; border-bottom: ${this.height}px solid green; border-right: ${this.height}px solid transparent"></div>`);
         this.shapediv.click( () => this.describe());
+        this.shapediv.dblclick( () => {this.shapediv.remove(); this.clearInfoBox()});
         $('#displayarea').append(this.shapediv);
     }
 }
