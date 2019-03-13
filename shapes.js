@@ -8,16 +8,40 @@ class Shape {
 class Square extends Shape {
     constructor(height, width){
         super(height, width);
+        this.name = 'Square';
+        this.radius = height / 2;
+        this.area = Math.pow(height, 2);
+        this.perimeter = height * 4;
         this.shapediv = $(`<div class="square" style="width: ${this.width}px; height: ${this.height}px; left: ${randomNumber(this.width, 600)}px; top:${randomNumber(this.width, 600)}px"></div>`);
+        this.shapediv.click( () => this.describe() );
         $('#displayarea').append(this.shapediv);
+    }
+
+    describe() {
+        $('#sn').empty();
+        $('#sn').append(`Shape Name: ${this.name} pixels`);
+        $('#w').empty();
+        $('#w').append(`Width: ${this.width} pixels`);
+        $('#h').empty();
+        $('#h').append(`Height: ${this.height} pixels`);
+        $('#r').empty();
+        $('#r').append(`Radius: ${this.radius} pixels`);
+        $('#a').empty();
+        $('#a').append(`Area: ${this.area} pixels`);
+        $('#p').empty();
+        $('#p').append(`Perimeter: ${this.perimeter} pixels`);
     }
 }
 
 class Rectangle extends Shape {
     constructor(height, width){
         super(height, width);
-        let newrectangle = $(`<div class="rectangle" style="width: ${this.width}px; height: ${this.height}px; left: ${randomNumber(this.width, 600)}px; top:${randomNumber(this.height, 600)}px"></div>`);
-        $('#displayarea').append(newrectangle);
+        this.name = 'Rectangle';
+        this.radius = this.width / 2;
+        this.area = this.height * this.width;
+        this.perimeter = this.height * 2 + this.width * 2;
+        this.shapediv = $(`<div class="rectangle" style="width: ${this.width}px; height: ${this.height}px; left: ${randomNumber(this.width, 600)}px; top:${randomNumber(this.height, 600)}px"></div>`);
+        $('#displayarea').append(this.shapediv);
     }
 }
 
@@ -25,16 +49,16 @@ class Circle extends Shape {
     constructor(radius){
         super(radius * 2, radius * 2)
         this.radius = radius;
-        let newcircle = $(`<div class="circle" style="width: ${this.width}px; height: ${this.height}px; left: ${randomNumber(this.width, 600)}px; top:${randomNumber(this.height, 600)}px"></div>`);
-        $('#displayarea').append(newcircle);
+        this.shapediv = $(`<div class="circle" style="width: ${this.width}px; height: ${this.height}px; left: ${randomNumber(this.width, 600)}px; top:${randomNumber(this.height, 600)}px"></div>`);
+        $('#displayarea').append(this.shapediv);
     }
 }
 
 class Triangle extends Shape {
     constructor(height){
         super(height);
-        let newtriangle = $(`<div class="triangle" style="width: 0px; height: 0px; left: ${randomNumber(this.height, 600)}px; top:${randomNumber(this.height, 600)}px; border-bottom: ${this.height}px solid green; border-right: ${this.height}px solid transparent"></div>`);
-        $('#displayarea').append(newtriangle);
+        this.shapediv = $(`<div class="triangle" style="width: 0px; height: 0px; left: ${randomNumber(this.height, 600)}px; top:${randomNumber(this.height, 600)}px; border-bottom: ${this.height}px solid green; border-right: ${this.height}px solid transparent"></div>`);
+        $('#displayarea').append(this.shapediv);
     }
 }
 
