@@ -19,7 +19,7 @@ class Square extends Shape {
 
     describe() {
         $('#sn').empty();
-        $('#sn').append(`Shape Name: ${this.name} pixels`);
+        $('#sn').append(`Shape Name: ${this.name}`);
         $('#w').empty();
         $('#w').append(`Width: ${this.width} pixels`);
         $('#h').empty();
@@ -41,7 +41,23 @@ class Rectangle extends Shape {
         this.area = this.height * this.width;
         this.perimeter = this.height * 2 + this.width * 2;
         this.shapediv = $(`<div class="rectangle" style="width: ${this.width}px; height: ${this.height}px; left: ${randomNumber(this.width, 600)}px; top:${randomNumber(this.height, 600)}px"></div>`);
+        this.shapediv.click( () => this.describe() );
         $('#displayarea').append(this.shapediv);
+    }
+
+    describe() {
+        $('#sn').empty();
+        $('#sn').append(`Shape Name: ${this.name}`);
+        $('#w').empty();
+        $('#w').append(`Width: ${this.width} pixels`);
+        $('#h').empty();
+        $('#h').append(`Height: ${this.height} pixels`);
+        $('#r').empty();
+        $('#r').append(`Radius: ${this.radius} pixels`);
+        $('#a').empty();
+        $('#a').append(`Area: ${this.area} pixels`);
+        $('#p').empty();
+        $('#p').append(`Perimeter: ${this.perimeter} pixels`);
     }
 }
 
@@ -49,8 +65,28 @@ class Circle extends Shape {
     constructor(radius){
         super(radius * 2, radius * 2)
         this.radius = radius;
+        this.name = 'Circle';
+        this.area = Math.PI * Math.pow(this.radius, 2);
+        this.perimeter = 2 * Math.PI * this.radius;
         this.shapediv = $(`<div class="circle" style="width: ${this.width}px; height: ${this.height}px; left: ${randomNumber(this.width, 600)}px; top:${randomNumber(this.height, 600)}px"></div>`);
+        this.shapediv.click( () => this.describe());
         $('#displayarea').append(this.shapediv);
+    }
+
+    describe() {
+        console.log(this.height);
+        $('#sn').empty();
+        $('#sn').append(`Shape Name: ${this.name}`);
+        $('#w').empty();
+        $('#w').append(`Width: ${this.width} pixels`);
+        $('#h').empty();
+        $('#h').append(`Height: ${this.height} pixels`);
+        $('#r').empty();
+        $('#r').append(`Radius: ${this.radius} pixels`);
+        $('#a').empty();
+        $('#a').append(`Area: ${this.area} pixels`);
+        $('#p').empty();
+        $('#p').append(`Perimeter: ${this.perimeter} pixels`);
     }
 }
 
