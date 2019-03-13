@@ -5,19 +5,23 @@
     background-color: aqua;
 }
 .square{
+    cursor: pointer;
     position: absolute;
     background-color: red;
 }
 .rectangle{
+    cursor: pointer;
     position: absolute;
     background-color: purple;
 }
 .circle{
+    cursor: pointer;
     border-radius: 50%;
     position: absolute;
     background-color: coral;
 }
 .triangle{
+    cursor: pointer;
     position: absolute;
     border-bottom: solid green;
     border-right: solid transparent;
