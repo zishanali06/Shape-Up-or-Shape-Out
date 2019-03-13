@@ -4,7 +4,7 @@ When a shape is clicked, you should update the sidepanel with the metrics for th
 Each type of shape will have its own input box(es) for getting size information, and an insert button for drawing the shape on the page
 Getting Started
 Create an index.html file, script.js file, and a css file for styling
-##Objectives - HTML
+## Objectives - HTML
 Your shape painter should handle four shapes: Square, Rectangle, Circle, and Triangle
 In your index.html, go ahead and add labeled input fields and insert buttons for each shape type:
 Rectangle: Inputs for width and height, and an insert button
@@ -20,7 +20,7 @@ Height:
 Radius:
 Area:
 Perimeter:
-##Objectives - JS
+## Objectives - JS
 You must use OOP. Specifically, you must use the classes defined below and properly use inheritance
 Class- Shape
 Shape is very generic
@@ -44,7 +44,7 @@ Needs to take a single parameter, sideLength, in its constructor
 Needs to call the constructor of its logical parent class
 A square is a special type of rectangle
 Can have methods that define behavior/calculations specific to Squares
-##Additional details
+## Additional details
 Clicking on any shape should call a method named describe(), which should update the statistics in the sidepanel in index.html
 Double clicking on any shape should remove the shape from the screen
 Every shape draws itself when it is created. The shape will be drawn according to the size specified when the shape was created, and the shape will be placed in a random location within the shape canvas
