@@ -92,6 +92,7 @@ class Triangle extends Shape {
     }
 }
 
+//adding clicks to buttons
 $('#squarebutton').click( () => addSquare() );
 $('#rectanglebutton').click( () => addRectangle() );
 $('#circlebutton').click( () => addCircle() );
