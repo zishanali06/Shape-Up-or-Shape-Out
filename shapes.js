@@ -127,4 +127,4 @@ const randomNumber = (min, max) => {
         return 0;
     }
     return rand;
-};
+}
